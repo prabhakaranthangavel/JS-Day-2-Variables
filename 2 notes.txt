@@ -1,0 +1,210 @@
+Content:
+
+1.Variables,variable types 
+2.operators
+3.Data types
+4.Type conversations
+
+*****************************************************************************************
+
+1.Variables:
+
+What is variables?
+===>It is a name given to  memory location.
+// oru  value ஐ store seiya kudiya container than  variables aagum.
+
+===>It is case sensitive i.e   ===> a != A
+
+===>Alphabetic letters are only used.not consider to special characters.
+
+===>SYNTAX:
+var/let/const         variablename      =  ;
+(keyword)            (user defined)  (mandatory)
+
+      *****************************************************************************************
+
+===>VARIBLES 3 types :
+1.var    2.let   3.const
+
+var:
+
+*ES5 (old version).
+*redeclare and reassign.
+*global  scope.
+
+*Example:
+var a=10;
+var a=20;
+console.log(a);    // output : 20
+
+let:
+
+*ES6 (new  version).
+*cannot redeclare but can reassign.( reassign only)
+*block scope.
+
+*Example:
+let  a=10;
+      a=20;
+console.log(a);    // output : 20 
+// values I only reassign pannalam.marubadiyum let redeclare panna mudiyathu.
+
+constant:
+
+*ES6 (new  version).
+*cannot redeclare and reassign.fixed the input.
+*block scope.
+
+*Example:
+const  a=10;
+console.log(a);    // output : 20
+
+*****************************************************************************************
+
+2.What is Operators?
+
+===>operators performed specific operations.
+
+====>different types of operators in java
+
+1.Arithmetic operator : +   -   *    /   %
+
+2.Assignment operator : =
+
+3.Logical operator : &&  AND operator ===> Must two conditions satisfied AND operator is working.
+                     || OR operator   ===> If one conditions satisfied OR operator is working.
+                     != Not Equal To  ===> opposite to Equal To
+
+4.Conditonal or Comparison operator : < Greator than
+                                      <=Greator than Equal to
+                                      <Less than
+                                      <=Less than Equal to
+                                      == Double Equal To   ===> Checking Two or more inputs are same using this opearator.
+                                      === Thriple Equal To ===> Checking same the number and the data types.
+
+*****************************************************************************************
+
+3.Data types:
+
+What is data types?
+
+===>Data types specify the different sizes and values that can be stored in the variable.
+
+===>A data type in Java represents the size and different values that can be stored in a variable.
+    //variables I store panni vaikka kudiya values in type solluvathu than data types aagum.
+
+===>Different types of data types includes in javascript
+
+1.Number  ===> 1 2 3 4 /  5.5
+2.String  ===> “ ”  /  ' '                        ===> using single or double quotes.
+3.Boolean ===> True / False
+4.Array   ===> [ 1234,”WELCOME“,true/false, {}  ] ===>  using square brackets.
+
+5.Object  ===> represented in key value pairs.
+              {
+                key : value
+              }                                   ===> using curly braces.
+
+6.NaN     ===> Not A Number 
+
+  Example:
+  var a= "prabha";
+  var b = +"prabha";
+  console.log(b);  //NaN
+*****************************************************************************************
+
+4.Type Conversions
+
+What is type Conversions: 
+
+===>The process of converting data of one data type into another.
+ 
+===>Converting one primitive datatype into another
+   //oru data type I vera oru data type aaga maatra payanpaduthu
+   
+===>Type conversions have 3 methods.
+
+    (1) + or parseInt   ===> string to number.
+
+    Example:
+           var a = "12345";
+           var a = +"12345"   //parseInt("12345")
+           var b = "67890";
+           var b = +"67890";  //parseInt("67890")
+           var c = a+b;
+           console.log(c);    // 80235
+
+    (1.1) ParseFloat      ===> string decimal value change to number.
+
+    Example:
+           var a = "12.3";
+           var a = parseFloat("12.3");
+           var b = "67.8";
+           var b = parseFloat("67.8");
+           var c = a+b;
+           console.log(c);    // 80.1
+
+      (2) Normal ஆக ஒரு Number ஐ String ஆக மாற்ற:
+       ***toString*** இன்னொரு வழி:
+
+      Example:
+            var a = 1 + "1"         //concat
+            console.log(a);
+            console.log(typeof(a)); //11 String
+      
+
+      (2.1) Array Number ஐ String ஆக மாற்றும் வழி:
+      Example:
+           var b=[1,2,3];
+           console.log(b.toString());  // output: “1 , 2 , 3”         
+      
+
+      (3) Boolean to String :
+
+      Example:
+            var a = true;
+            console.log(String(a));
+            console.log(typeof(a));    // true   boolean ===>இவ்வாறு கொடுக்கும்போது type சரியான முறையில் வரவில்லை.
+ 
+      இப்படி கொடுத்தால் தான் சரியான முறையில் type ஐ கண்டுபிடிக்க முடியும்.
+            var a = true;
+            var b = String(a)
+            console.log(String(a));
+            console.log(typeof(b));    // true   string
+
+
+      (3.1) Boolean to Number :
+
+      Example:
+            let a = 0;
+            let b = Number(a);
+            console.log(Boolean(a));
+            console.log(typeof(b));    // false  number
+  
+      Example2:
+            let a = 1;
+            let b = Number(a);
+            console.log(Boolean(a));
+            console.log(typeof(b));    // true  number    
+      ===> பூஜ்ஜியத்தை தவிர எந்த number ஐ கொடுத்தாலும் அது true ஆகத்தான் காட்டும்.
+
+
+      (3.2) Boolean to "0"   ""    []  :
+
+      Example:
+            let a = "0";     ===>ஏதேனும் ஒரு number including "0" இருந்தாலும் கூட true ஆக வரும்.
+            let b = String(a);
+            console.log(Boolean(a));
+            console.log(typeof(b));    // true string
+
+      Example2:
+            let a = "";      ===>empty string ஆக கொடுக்கும் போது false ஆக வரும்.
+            let b = String(a);
+            console.log(Boolean(a));
+            console.log(typeof(b));    // false string
+
+      Example3:
+            let a = [];      ===>empty Array ஆக கொடுக்கும் போது true ஆக வரும்.
+            console.log(Boolean(a));   // true 
+      
+*****************************************************************************************
